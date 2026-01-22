@@ -17,7 +17,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #f7c6d9;
+      background: #f7c6d9; /* pastel pink */
       overflow: hidden;
     }
 
@@ -36,7 +36,7 @@
       pointer-events: none;
     }
 
-    /* Floating chrome hearts */
+    /* ✨ Floating lavender chrome hearts */
     .heart {
       position: absolute;
       width: 40px;
@@ -51,8 +51,8 @@
       );
       transform: rotate(45deg);
       animation: float 12s infinite ease-in-out, shine 4s infinite linear;
-      opacity: 0.35;
-      filter: drop-shadow(0 2px 6px rgba(180,160,255,0.6));
+      opacity: 0.3;
+      filter: drop-shadow(0 2px 6px rgba(180,160,255,0.7));
     }
 
     .heart::before,
@@ -86,7 +86,7 @@
       100% { background-position: 200% 50%; }
     }
 
-    /* Envelope */
+    /* 💌 Envelope */
     .envelope {
       width: 320px;
       height: 220px;
@@ -107,7 +107,7 @@
       opacity: 0.85;
     }
 
-    /* Heart seal */
+    /* ❤️ Vintage heart seal with lace */
     .seal {
       width: 64px;
       height: 64px;
@@ -156,7 +156,7 @@
       pointer-events: none;
     }
 
-    /* Letter */
+    /* 💌 Letter page */
     .letter {
       width: 360px;
       padding: 30px 20px;
@@ -202,6 +202,7 @@
 </head>
 
 <body>
+
   <!-- PAGE 1 -->
   <div class="page" id="page1">
     <div class="envelope">
@@ -215,7 +216,7 @@
       </div>
     </div>
 
-    <!-- Floating hearts -->
+    <!-- floating hearts -->
     <div class="heart" style="top:10%; left:15%;"></div>
     <div class="heart" style="top:70%; left:20%;"></div>
     <div class="heart" style="top:20%; left:80%;"></div>
@@ -245,5 +246,6 @@
       document.getElementById('page2').classList.remove('hidden');
     }
   </script>
+
 </body>
 </html>
