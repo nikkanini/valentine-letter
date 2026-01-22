@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Will You Be My Valentine?</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -16,7 +17,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #f7c6d9; /* pastel pink */
+      background: #f7c6d9;
       overflow: hidden;
     }
 
@@ -40,10 +41,18 @@
       position: absolute;
       width: 40px;
       height: 40px;
-      background: radial-gradient(circle at top left, #ffe6ef, #f2a2c2);
+      background: linear-gradient(
+        135deg,
+        #e6dcff,
+        #b8a7ff 40%,
+        #efe9ff 55%,
+        #b8a7ff 70%,
+        #e6dcff
+      );
       transform: rotate(45deg);
-      animation: float 10s infinite ease-in-out;
-      opacity: 0.6;
+      animation: float 12s infinite ease-in-out, shine 4s infinite linear;
+      opacity: 0.35;
+      filter: drop-shadow(0 2px 6px rgba(180,160,255,0.6));
     }
 
     .heart::before,
@@ -72,126 +81,17 @@
       100% { transform: translateY(0) rotate(45deg); }
     }
 
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
     /* Envelope */
     .envelope {
       width: 320px;
       height: 220px;
-      background: #fff;
+      background: #ffffff;
       position: relative;
       border-radius: 6px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-
-    .seal {
-      width: 60px;
-      height: 60px;
-      background: #b11226; /* vintage red */
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(45deg);
-      cursor: pointer;
-    }
-
-    .seal::before,
-    .seal::after {
-      content: '';
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      background: #b11226;
-      border-radius: 50%;
-    }
-
-    .seal::before {
-      top: -30px;
-      left: 0;
-    }
-
-    .seal::after {
-      left: -30px;
-      top: 0;
-    }
-
-    /* Letter Page */
-    .letter {
-      width: 360px;
-      padding: 30px 20px;
-      background: #fffafc;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-
-    .letter h1 {
-      margin-bottom: 30px;
-      font-size: 26px;
-      color: #b11226;
-    }
-
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .btn {
-      padding: 14px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      transition: transform 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    .lavender {
-      background: #e6d9ff;
-    }
-
-    .pink {
-      background: #ffe1eb;
-    }
-
-    .btn span {
-      display: block;
-      font-size: 12px;
-      opacity: 0.7;
-    }
-  </style>
-</head>
-<body>
-  <!-- Page 1 -->
-  <div class="page" id="page1">
-    <div class="envelope">
-      <div class="seal" onclick="openLetter()"></div>
-    </div>
-    <!-- floating hearts -->
-    <div class="heart" style="top:10%; left:15%;"></div>
-    <div class="heart" style="top:70%; left:20%;"></div>
-    <div class="heart" style="top:20%; left:80%;"></div>
-    <div class="heart" style="top:60%; left:75%;"></div>
-  </div>
-
-  <!-- Page 2 -->
-  <div class="page hidden" id="page2">
-    <div class="letter">
-      <h1>Will you be my Valentine?</h1>
-      <div class="options">
-        <button class="btn lavender">Yes, a 1000000x yes</button>
-        <button class="btn pink">Yes, always. All day, everyday. Until we grow old, YES</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function openLetter() {
-      document.getElementById('page1').classList.add('hidden');
-      document.getElementById('page2').classList.remove('hidden');
-    }
-  </script>
-</body>
-</html>
+      overflo
