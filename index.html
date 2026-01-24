@@ -4,19 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Will You Be My Valentine?</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f8cdda;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Floating chrome hearts */
+    .floating-heart {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #e6d9ff, #c7b6ff, #f5e9ff);
+      clip-path: polygon(
+        50% 85%,
+        90% 45%,
+        75% 15%,
+        50% 30%,
+        25% 15%,
+        10% 45%
+      );
+      opacity: 0.35;
+      animation: float 12s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-40px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Envelope */
+    .envelope {
+      position: relative;
+      background: white;
+      width: 320px;
+      height: 220px;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      padding: 16px;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .to-from {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      font-size: 14px;
+      color: #a33;
+      text-align: left;
+    }
+
+    /* Heart sticker */
+    .heart-sticker {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle at top left, #ff6b81, #c9184a);
+      clip-path: polygon(
+        50% 85%,
+        90% 45%,
+        75% 15%,
+        50% 30%,
+        25% 15%,
+        10% 45%
+      );
+      border: 4px solid #fff;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+      cursor: pointer;
+    }
+
+    .heart-sticker::after {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border: 2px dashed #fff;
+      border-radius: 50%;
+    }
+  </style>
 </head>
+
 <body>
 
-  <div class="heart heart1"></div>
-  <div class="heart heart2"></div>
-  <div class="heart heart3"></div>
-  <div class="heart heart4"></div>
+  <!-- floating hearts -->
+  <div class="floating-heart" style="top:10%; left:15%; animation-delay:0s;"></div>
+  <div class="floating-heart" style="top:30%; left:70%; animation-delay:2s;"></div>
+  <div class="floating-heart" style="top:70%; left:20%; animation-delay:4s;"></div>
+  <div class="floating-heart" style="top:60%; left:80%; animation-delay:6s;"></div>
 
-  <div class="card">
-    <p class="to-from">
-      To: My Rob <br>
+  <!-- envelope -->
+  <div class="envelope">
+    <div class="to-from">
+      To: My Rob<br>
       From: Nikka (your amazing girlfriend btw)
-    </p>
+    </div>
 
-    <div class="
+    <div class="heart-sticker" onclick="alert('Next page coming next 😘')"></div>
+  </div>
+
+</body>
+</html>
