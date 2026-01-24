@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Will You Be My Valentine?</title>
+  <title>For My Valentine 💌</title>
 
   <style>
     * {
@@ -14,87 +14,103 @@
     body {
       margin: 0;
       height: 100vh;
-      background: #f8cdda;
+      background: #f6c1d1;
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      position: relative;
     }
 
-    /* Floating chrome hearts */
+    /* ✨ floating chrome hearts */
     .floating-heart {
       position: absolute;
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #e6d9ff, #c7b6ff, #f5e9ff);
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(
+        135deg,
+        #d6c6ff,
+        #b8a9ff,
+        #efe9ff
+      );
       clip-path: polygon(
-        50% 85%,
-        90% 45%,
+        50% 88%,
+        92% 45%,
         75% 15%,
         50% 30%,
         25% 15%,
-        10% 45%
+        8% 45%
       );
-      opacity: 0.35;
-      animation: float 12s infinite ease-in-out;
+      opacity: 0.22;
+      filter: blur(0.3px) drop-shadow(0 0 10px rgba(190,170,255,0.8));
+      animation: float 14s ease-in-out infinite;
     }
 
     @keyframes float {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-40px); }
+      50% { transform: translateY(-50px); }
       100% { transform: translateY(0); }
     }
 
-    /* Envelope */
+    /* ✉️ envelope */
     .envelope {
       position: relative;
       background: white;
-      width: 320px;
-      height: 220px;
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-      padding: 16px;
-      text-align: center;
+      width: 340px;
+      height: 230px;
+      border-radius: 14px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.18);
       z-index: 10;
     }
 
     .to-from {
       position: absolute;
-      top: 12px;
-      left: 14px;
+      top: 14px;
+      left: 16px;
       font-size: 14px;
-      color: #a33;
-      text-align: left;
+      color: #9d0208;
+      line-height: 1.3;
     }
 
-    /* Heart sticker */
+    /* ❤️ heart sticker */
     .heart-sticker {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 90px;
-      height: 90px;
-      background: radial-gradient(circle at top left, #ff6b81, #c9184a);
+      width: 95px;
+      height: 95px;
+      background: radial-gradient(
+        circle at top left,
+        #ff758f,
+        #c9184a
+      );
       clip-path: polygon(
-        50% 85%,
-        90% 45%,
+        50% 88%,
+        92% 45%,
         75% 15%,
         50% 30%,
         25% 15%,
-        10% 45%
+        8% 45%
       );
-      border: 4px solid #fff;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+      box-shadow:
+        inset 0 0 10px rgba(255,255,255,0.5),
+        0 10px 20px rgba(0,0,0,0.3);
       cursor: pointer;
     }
 
-    .heart-sticker::after {
+    /* 🧵 lace trim */
+    .heart-sticker::before {
       content: "";
       position: absolute;
-      inset: -6px;
-      border: 2px dashed #fff;
+      inset: -10px;
       border-radius: 50%;
+      border: 2px dotted #fff;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.8));
+    }
+
+    .heart-sticker:hover {
+      transform: translate(-50%, -50%) scale(1.06);
     }
   </style>
 </head>
@@ -102,10 +118,10 @@
 <body>
 
   <!-- floating hearts -->
-  <div class="floating-heart" style="top:10%; left:15%; animation-delay:0s;"></div>
-  <div class="floating-heart" style="top:30%; left:70%; animation-delay:2s;"></div>
-  <div class="floating-heart" style="top:70%; left:20%; animation-delay:4s;"></div>
-  <div class="floating-heart" style="top:60%; left:80%; animation-delay:6s;"></div>
+  <div class="floating-heart" style="top:12%; left:15%; animation-delay:0s;"></div>
+  <div class="floating-heart" style="top:25%; left:75%; animation-delay:3s;"></div>
+  <div class="floating-heart" style="top:65%; left:20%; animation-delay:6s;"></div>
+  <div class="floating-heart" style="top:70%; left:80%; animation-delay:9s;"></div>
 
   <!-- envelope -->
   <div class="envelope">
@@ -114,7 +130,9 @@
       From: Nikka (your amazing girlfriend btw)
     </div>
 
-    <div class="heart-sticker" onclick="window.location.href='letter.html'"></div>
+    <div class="heart-sticker"
+      onclick="window.location.href='letter.html'">
+    </div>
   </div>
 
 </body>
