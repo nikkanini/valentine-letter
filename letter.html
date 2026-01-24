@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Valentine 💕</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(#f8cdda, #fbc2eb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+    }
+
+    .letter {
+      background: #fff;
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 420px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+      animation: open 1s ease;
+    }
+
+    @keyframes open {
+      from {
+        transform: scale(0.8) translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: #c9184a;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    button {
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .yes1 {
+      background: #e6d9ff;
+      color: #5a189a;
+      box-shadow: 0 0 15px rgba(186, 160, 255, 0.6);
+    }
+
+    .yes2 {
+      background: #ffe3ec;
+      color: #9d0208;
+      box-shadow: 0 0 15px rgba(255, 179, 193, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="letter">
+    <h1>Will you be my Valentine?</h1>
+
+    <div class="buttons">
+      <button class="yes1" onclick="alert('I knew it 😭💜')">
+        Yes, a 1000000x yes 💜
+      </button>
+
+      <button class="yes2" onclick="alert('Forever locked in 💍💗')">
+        Yes, always. All day, everyday. Until we grow old, YES 💕
+      </button>
+    </div>
+  </div>
+</body>
+</html>
